@@ -1,0 +1,54 @@
+format = """
+$username\
+$hostname\
+$character"""
+
+right_format = """
+$directory\
+$git_branch\
+$git_state\
+$git_status"""
+
+
+add_newline = false
+
+[cmd_duration]
+disabled = true
+
+[username]
+format = '[$user](bold blue)'
+disabled = false
+show_always = false 
+
+[hostname]
+ssh_only = true
+format = '[@$hostname](bold magenta)'
+disabled = false
+
+[directory]
+style = "bright-black"
+truncation_length = 3
+format = '[$path]($style) '
+
+[character]
+success_symbol = "[>](bold purple)"
+error_symbol = "[>](bold red)"
+
+[git_branch]
+format = "[$branch]($style)"
+style = "bold green"
+
+[git_status]
+format = "[[( $modified$behind)](red)( $ahead)]($style)"
+style = "bright-black"
+ahead = " "
+behind = " "
+modified = " "   
+
+[git_state]
+format = '\([$state( $progress_current/$progress_total)]($style)\) '
+style = "bright-black"
+
+[container]
+format = '[$symbol \[$name\]]($style) '
+symbol = " "

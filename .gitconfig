@@ -1,0 +1,86 @@
+[user]
+    name = vhespanha
+    email = vhespanha@tuta.io
+	signingkey = D2E5184CE2A03F26
+
+[core]
+    editor = nvim
+    excludesfile = ~/.gitignore_global
+
+[alias]
+    a = add
+    aa = add --all
+    br = branch
+    ci = commit
+    co = checkout
+    df = diff
+    dfs = diff --staged
+    l = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+    pl = pull
+    ps = push
+    rb = rebase
+    rba = rebase --abort
+    rbc = rebase --continue
+    rbi = rebase --interactive
+    st = status
+
+[color]
+    ui = auto
+
+[diff]
+    tool = vimdiff
+    renames = copies
+
+[help]
+    autocorrect = 1
+
+[merge]
+    tool = vimdiff
+    conflictstyle = diff3
+
+[pull]
+    rebase = true
+
+[push]
+    default = simple
+    followTags = true
+
+[rebase]
+    autoStash = true
+
+[stash]
+    showPatch = true
+
+[status]
+    showUntrackedFiles = all
+
+[log]
+    date = relative
+
+[format]
+    pretty = format:%C(yellow)%h%Creset %s %Cgreen(%an, %cr)%Creset%C(red)%d%Creset
+
+[filter "lfs"]
+    clean = git-lfs clean -- %f
+    smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process
+    required = true
+
+[init]
+    defaultBranch = main
+
+
+[url "git@github.com:"]
+	insteadOf = https://github.com/
+
+[commit]
+	gpgSign = true
+
+[gpg]
+	program = gpg
+
+[hub]
+	protocol = ssh
+
+[credential]
+	helper = /usr/lib/git-core/git-credential-libsecret

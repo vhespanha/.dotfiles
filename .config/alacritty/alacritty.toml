@@ -1,0 +1,65 @@
+[colors.normal]
+black = "#282a2e"
+blue = "#79c0ff"
+cyan = "#56d4dd"
+green = "#56d364"
+magenta = "#bc8cff"
+red = "#ff7b72"
+yellow = "#e3b341"
+white = "#b1bac4"
+
+[colors.bright]
+black = "#4B4B4B"
+blue = "#79c0ff"
+cyan = "#56d4dd"
+green = "#56d364"
+magenta = "#bc8cff"
+red = "#ff7b72"
+yellow = "#e3b341"
+white = "#FFFFFF"
+
+[colors.primary]
+background = "#0f0f0f"
+foreground = "#bbc2cf"
+
+[cursor]
+unfocused_hollow = true
+
+[cursor.style]
+blinking = "Always"
+shape = "Beam"
+
+[font]
+builtin_box_drawing = true
+size = 14.0
+
+[font.normal]
+family = "SFMono Nerd Font"
+style = "Regular"
+
+[[keyboard.bindings]]
+action = "CreateNewWindow"
+key = "N"
+mods = "Control"
+
+[shell]
+program = "/bin/zsh"
+
+[window]
+decorations = "none"
+decorations_theme_variant = "None"
+dynamic_title = true
+title = "Alacritty"
+
+[window.padding]
+x = 10
+y = 6
+
+[[hints.enabled]]
+command = "xdg-open"                                                                                                                                      # On Linux/BSD
+hyperlinks = true
+post_processing = true
+persist = false
+mouse.enabled = true
+binding = { key = "U", mods = "Control|Shift" }
+regex = "(ipfs:|ipns:|magnet:|mailto:|gemini://|gopher://|https://|http://|news:|file:|git://|ssh:|ftp://)[^\u0000-\u001F\u007F-\u009F<>\"\\s{-}\\^⟨⟩`]+"

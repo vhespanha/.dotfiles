@@ -27,12 +27,15 @@ zinit light zsh-users/zsh-autosuggestions
 zinit light zsh-users/zsh-history-substring-search
 zinit light agkozak/zsh-z
 zinit light Aloxaf/fzf-tab
+zinit ice lucid nocompile
+zinit load MenkeTechnologies/zsh-cargo-completion
 
 zinit snippet OMZP::git
 zinit snippet OMZP::sudo
 zinit snippet OMZP::archlinux
 zinit snippet OMZP::golang
 zinit snippet OMZP::command-not-found
+zinit snippet OMZP::direnv
 
 # Completions
 autoload -Uz compinit && compinit
@@ -55,6 +58,7 @@ export EDITOR=nvim
 export NVM_DIR="$HOME/.nvm"
 export PNPM_HOME="$HOME/.local/share/pnpm"
 export PATH="$PATH:/opt:/usr/local/go/bin"
+export PATH="$HOME/.config/emacs/bin:$PATH"
 export PATH="$HOME/.npm-global/bin:$HOME/.bun/bin:$HOME/.turso:$HOME/.local/bin:$(go env GOPATH)/bin:$PNPM_HOME:$PATH"
 
 # Go environment variables
@@ -111,7 +115,7 @@ bindkey -r "^[^["
 zle_highlight+=(paste:none)
 
 # Aliases
-alias ls='eza -a --group-directories-first'
+alias ls='ls --color=auto'
 alias la='ls -la'
 alias ll='ls -lh'
 alias c='clear'

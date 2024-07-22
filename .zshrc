@@ -4,16 +4,16 @@ eval "$(starship init zsh)"
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 
 if [ ! -d "$ZINIT_HOME" ]; then
-    mkdir -p "$(dirname $ZINIT_HOME)"
-    git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
+	mkdir -p "$(dirname $ZINIT_HOME)"
+	git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
 fi
 
 # Set the GPG_TTY to be the same as the TTY, either via the env var
 # or via the tty command.
 if [ -n "$TTY" ]; then
-    export GPG_TTY=$(tty)
+	export GPG_TTY=$(tty)
 else
-    export GPG_TTY="$TTY"
+	export GPG_TTY="$TTY"
 fi
 
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/gcr/ssh"
@@ -41,17 +41,17 @@ zinit snippet OMZP::direnv
 autoload -Uz compinit && compinit
 
 zstyle ':completion:*' matcher-list '' \
-    'm:{a-z\-}={A-Z\_}' \
-    'r:[^[:alpha:]]||[[:alpha:]]=** r:|=* m:{a-z\-}={A-Z\_}' \
-    'r:|?=** m:{a-z\-}={A-Z\_}'
+	'm:{a-z\-}={A-Z\_}' \
+	'r:[^[:alpha:]]||[[:alpha:]]=** r:|=* m:{a-z\-}={A-Z\_}' \
+	'r:|?=** m:{a-z\-}={A-Z\_}'
 
 zstyle ':completion:*' list-suffixes
 zstyle ':completion:*' squeeze-slashes
 zstyle ':completion:*' menu no
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza --color $realpath'
 zstyle ":fzf-tab:*" fzf-flags --height=25% --layout=reverse \
-    --color "fg:#6a737d,bg:#0f0f0f,hl:#bc8cff,fg+:#bc8cff,bg+:#0f0f0f,hl+:#bc8cff,border:#0f0f0f" \
-    --color "info:#6a737d,prompt:#bc8cff,spinner:#bc8cff,pointer:#0f0f0f,marker:#0f0f0f,header:#0f0f0f"
+	--color "fg:#6a737d,bg:#0f0f0f,hl:#bc8cff,fg+:#bc8cff,bg+:#0f0f0f,hl+:#bc8cff,border:#0f0f0f" \
+	--color "info:#6a737d,prompt:#bc8cff,spinner:#bc8cff,pointer:#0f0f0f,marker:#0f0f0f,header:#0f0f0f"
 
 # Environment variables
 export EDITOR=nvim
@@ -72,10 +72,23 @@ export PATH=$PATH:$GOPATH/bin
 # Pulumi
 export PATH=$PATH:/home/vinicius/.pulumi/bin
 
-# Configure pyenv
+# Set up pyenv root directory
 export PYENV_ROOT="$HOME/.pyenv"
-[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+
+# Add pyenv to PATH if the directory exists
+if [[ -d "$PYENV_ROOT/bin" ]]; then
+	export PATH="$PYENV_ROOT/bin:$PATH"
+fi
+
+# Initialize pyenv
+eval "$(pyenv init --path)"
 eval "$(pyenv init -)"
+
+# Initialize pyenv-virtualenv
+eval "$(pyenv virtualenv-init -)"
+
+# Disable pyenv-virtualenv prompt modification
+export PYENV_VIRTUALENV_DISABLE_PROMPT=1
 
 # History settings
 HISTSIZE=2000
@@ -122,5 +135,9 @@ alias c='clear'
 alias md='mkdir -p'
 alias sudo='sudo -v; sudo'
 alias v='nvim'
+alias rm='rm -rf'
+alias touch='retouch'
 
 eval "$(fzf --zsh)"
+
+source /home/vhespanha/.config/broot/launcher/bash/br

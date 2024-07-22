@@ -1,6 +1,7 @@
 format = """
 $username\
 $hostname\
+$python\
 $character"""
 
 right_format = """
@@ -18,7 +19,7 @@ disabled = true
 [username]
 format = '[$user](bold blue)'
 disabled = false
-show_always = false 
+show_always = false
 
 [hostname]
 ssh_only = true
@@ -34,6 +35,11 @@ format = '[$path]($style) '
 success_symbol = "[>](bold purple)"
 error_symbol = "[>](bold red)"
 
+[python]
+symbol = " "
+style = "bold purple"
+format = "[$symbol]($style)"
+
 [git_branch]
 format = "[$branch]($style)"
 style = "bold green"
@@ -43,7 +49,7 @@ format = "[[( $modified$behind)](red)( $ahead)]($style)"
 style = "bright-black"
 ahead = " "
 behind = " "
-modified = " "   
+modified = " "
 
 [git_state]
 format = '\([$state( $progress_current/$progress_total)]($style)\) '

@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-set -e  # Exit immediately if a command exits with a non-zero status
+set -e # Exit immediately if a command exits with a non-zero status
 
 function install_software() {
   echo "Installing software packages..."
@@ -24,7 +24,7 @@ function link_files() {
   mkdir -p ~/.config
   rm -f ~/.gitconfig
   rm -rf ~/.config/zshrc ~/.prettierrc ~/.editorconfig ~/.config/nvim
-  stow .
+  stow --dotfiles .
 }
 
 function setup_software() {

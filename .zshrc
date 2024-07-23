@@ -4,16 +4,16 @@ eval "$(starship init zsh)"
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 
 if [ ! -d "$ZINIT_HOME" ]; then
-	mkdir -p "$(dirname $ZINIT_HOME)"
-	git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
+  mkdir -p "$(dirname $ZINIT_HOME)"
+  git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
 fi
 
 # Set the GPG_TTY to be the same as the TTY, either via the env var
 # or via the tty command.
 if [ -n "$TTY" ]; then
-	export GPG_TTY=$(tty)
+  export GPG_TTY=$(tty)
 else
-	export GPG_TTY="$TTY"
+  export GPG_TTY="$TTY"
 fi
 
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/gcr/ssh"
@@ -41,43 +41,33 @@ zinit snippet OMZP::direnv
 autoload -Uz compinit && compinit
 
 zstyle ':completion:*' matcher-list '' \
-	'm:{a-z\-}={A-Z\_}' \
-	'r:[^[:alpha:]]||[[:alpha:]]=** r:|=* m:{a-z\-}={A-Z\_}' \
-	'r:|?=** m:{a-z\-}={A-Z\_}'
+  'm:{a-z\-}={A-Z\_}' \
+  'r:[^[:alpha:]]||[[:alpha:]]=** r:|=* m:{a-z\-}={A-Z\_}' \
+  'r:|?=** m:{a-z\-}={A-Z\_}'
 
 zstyle ':completion:*' list-suffixes
 zstyle ':completion:*' squeeze-slashes
 zstyle ':completion:*' menu no
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza --color $realpath'
 zstyle ":fzf-tab:*" fzf-flags --height=25% --layout=reverse \
-	--color "fg:#6a737d,bg:#0f0f0f,hl:#bc8cff,fg+:#bc8cff,bg+:#0f0f0f,hl+:#bc8cff,border:#0f0f0f" \
-	--color "info:#6a737d,prompt:#bc8cff,spinner:#bc8cff,pointer:#0f0f0f,marker:#0f0f0f,header:#0f0f0f"
+  --color "fg:#6a737d,bg:#0f0f0f,hl:#bc8cff,fg+:#bc8cff,bg+:#0f0f0f,hl+:#bc8cff,border:#0f0f0f" \
+  --color "info:#6a737d,prompt:#bc8cff,spinner:#bc8cff,pointer:#0f0f0f,marker:#0f0f0f,header:#0f0f0f"
 
 # Environment variables
 export EDITOR=nvim
-export NVM_DIR="$HOME/.nvm"
-export PNPM_HOME="$HOME/.local/share/pnpm"
 export PATH="$PATH:/opt:/usr/local/go/bin"
-export PATH="$HOME/.config/emacs/bin:$PATH"
-export PATH="$HOME/.npm-global/bin:$HOME/.bun/bin:$HOME/.turso:$HOME/.local/bin:$(go env GOPATH)/bin:$PNPM_HOME:$PATH"
+export PATH="$HOME/.npm-global/bin:$(go env GOPATH)/bin"
 
 # Go environment variables
 export GOPATH=$(go env GOPATH)
 export PATH=$PATH:$GOPATH/bin
-
-# NVM configuration
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
-[ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"
-
-# Pulumi
-export PATH=$PATH:/home/vinicius/.pulumi/bin
 
 # Set up pyenv root directory
 export PYENV_ROOT="$HOME/.pyenv"
 
 # Add pyenv to PATH if the directory exists
 if [[ -d "$PYENV_ROOT/bin" ]]; then
-	export PATH="$PYENV_ROOT/bin:$PATH"
+  export PATH="$PYENV_ROOT/bin:$PATH"
 fi
 
 # Initialize pyenv
@@ -125,8 +115,6 @@ bindkey "^J" accept-line
 bindkey "^M" accept-line
 bindkey -r "^[^["
 
-zle_highlight+=(paste:none)
-
 # Aliases
 alias ls='ls --color=auto'
 alias la='ls -la'
@@ -139,5 +127,3 @@ alias rm='rm -rf'
 alias touch='retouch'
 
 eval "$(fzf --zsh)"
-
-source /home/vhespanha/.config/broot/launcher/bash/br

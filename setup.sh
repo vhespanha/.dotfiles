@@ -7,16 +7,15 @@ function install_software() {
   sudo apt-get update
   sudo apt-get install -o DPkg::Lock::Timeout=600 -y build-essential jq software-properties-common
   sudo apt-get install -y ca-certificates curl gnupg stow neovim luajit fd-find ripgrep fzf
-  curl -sS https://starship.rs/install.sh | sh -s -- -y
-  curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+  sudo curl -sS https://starship.rs/install.sh | sh -s -- -y
 }
 
 function link_files() {
   echo "Linking configuration files..."
   mkdir -p ~/.config
   rm -f ~/.gitconfig
-  rm -rf ~/.config/zshrc ~/.prettierrc ~/.editorconfig ~/.config/nvim
-  stow --dotfiles .
+  rm -rf ~/.zshrc ~/.prettierrc ~/.editorconfig ~/.config/nvim
+  stow --dotfiles --adopt .
 }
 
 function setup_software() {

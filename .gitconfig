@@ -1,7 +1,7 @@
 [user]
     name = vhespanha
     email = vhespanha@tuta.io
-	signingkey = D2E5184CE2A03F26
+    signingkey = D2E5184CE2A03F26
 
 [core]
     editor = nvim
@@ -23,9 +23,6 @@
     rbc = rebase --continue
     rbi = rebase --interactive
     st = status
-
-[color]
-    ui = auto
 
 [diff]
     tool = vimdiff
@@ -69,18 +66,18 @@
 [init]
     defaultBranch = main
 
-
 [url "git@github.com:"]
-	insteadOf = https://github.com/
+    insteadOf = https://github.com/
 
 [commit]
-	gpgSign = true
+    gpgSign = true
 
 [gpg]
-	program = gpg
+    program = gpg
 
 [hub]
-	protocol = ssh
+    protocol = ssh
 
 [credential]
-	helper = /usr/lib/git-core/git-credential-libsecret
+    helper = /usr/lib/git-core/git-credential-libsecret
+

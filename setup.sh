@@ -1,8 +1,12 @@
-#!/usr/bin/bash
+#!/usr/bin/env bash
 
 set -e # Exit immediately if a command exits with a non-zero status
 
 LOG_FILE="/home/gitpod/.dotfiles.log"
+
+# Ensure the script has permission to write to the log file
+touch "$LOG_FILE"
+chmod 644 "$LOG_FILE"
 
 function log() {
   echo "$1" | tee -a "$LOG_FILE"
@@ -22,7 +26,7 @@ function link_files() {
   mkdir -p ~/.config
   rm -f ~/.gitconfig
   rm -rf ~/.config/zshrc ~/.prettierrc ~/.editorconfig ~/.config/nvim
-  stow --adopt --dotfiles .
+  stow --dotfiles .
 }
 
 function setup_software() {

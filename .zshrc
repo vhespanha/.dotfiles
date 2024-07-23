@@ -64,6 +64,7 @@ export PNPM_HOME="$HOME/.local/share/pnpm"
 export PATH="$PATH:/opt:/usr/local/go/bin"
 export PATH="$HOME/.config/emacs/bin:$PATH"
 export PATH="$HOME/.npm-global/bin:$HOME/.bun/bin:$HOME/.turso:$HOME/.local/bin:$(go env GOPATH)/bin:$PNPM_HOME:$PATH"
+export WAYLAND_DISPLAY=1
 
 # Go environment variables
 export GOPATH=$(go env GOPATH)

@@ -1,0 +1,31 @@
+[Added Associations]
+x-scheme-handler/sms=org.gnome.Shell.Extensions.GSConnect.desktop;
+x-scheme-handler/tel=org.gnome.Shell.Extensions.GSConnect.desktop;
+application/vnd.oasis.opendocument.formula-template=org.gnome.font-viewer.desktop;
+font/otf=org.gnome.FontManager.desktop;
+x-scheme-handler/http=firefox.desktop;userapp-Firefox-NBG9Q2.desktop;userapp-Firefox-WZNYQ2.desktop;
+x-scheme-handler/https=firefox.desktop;userapp-Firefox-NBG9Q2.desktop;userapp-Firefox-WZNYQ2.desktop;
+x-scheme-handler/chrome=firefox.desktop;userapp-Firefox-NBG9Q2.desktop;userapp-Firefox-WZNYQ2.desktop;
+text/html=firefox.desktop;userapp-Firefox-NBG9Q2.desktop;userapp-Firefox-WZNYQ2.desktop;
+application/x-extension-htm=firefox.desktop;userapp-Firefox-NBG9Q2.desktop;userapp-Firefox-WZNYQ2.desktop;
+application/x-extension-html=firefox.desktop;userapp-Firefox-NBG9Q2.desktop;userapp-Firefox-WZNYQ2.desktop;
+application/x-extension-shtml=firefox.desktop;userapp-Firefox-NBG9Q2.desktop;userapp-Firefox-WZNYQ2.desktop;
+application/xhtml+xml=firefox.desktop;userapp-Firefox-NBG9Q2.desktop;userapp-Firefox-WZNYQ2.desktop;
+application/x-extension-xhtml=firefox.desktop;userapp-Firefox-NBG9Q2.desktop;userapp-Firefox-WZNYQ2.desktop;
+application/x-extension-xht=firefox.desktop;userapp-Firefox-NBG9Q2.desktop;userapp-Firefox-WZNYQ2.desktop;
+application/x-zerosize=nvim.desktop;
+
+[Default Applications]
+application/vnd.oasis.opendocument.formula-template=org.gnome.font-viewer.desktop
+font/otf=org.gnome.FontManager.desktop
+x-scheme-handler/http=userapp-Firefox-WZNYQ2.desktop
+x-scheme-handler/https=userapp-Firefox-WZNYQ2.desktop
+x-scheme-handler/chrome=userapp-Firefox-WZNYQ2.desktop
+text/html=userapp-Firefox-WZNYQ2.desktop
+application/x-extension-htm=userapp-Firefox-WZNYQ2.desktop
+application/x-extension-html=userapp-Firefox-WZNYQ2.desktop
+application/x-extension-shtml=userapp-Firefox-WZNYQ2.desktop
+application/xhtml+xml=userapp-Firefox-WZNYQ2.desktop
+application/x-extension-xhtml=userapp-Firefox-WZNYQ2.desktop
+application/x-extension-xht=userapp-Firefox-WZNYQ2.desktop
+application/x-zerosize=nvim.desktop

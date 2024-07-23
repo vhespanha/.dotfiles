@@ -31,7 +31,7 @@ shape = "Beam"
 
 [font]
 builtin_box_drawing = true
-size = 11.5
+size = 12
 
 [font.normal]
 family = "SFMono Nerd Font"

@@ -55,12 +55,22 @@ zstyle ":fzf-tab:*" fzf-flags --height=25% --layout=reverse \
 
 # Environment variables
 export EDITOR=nvim
+export NVM_DIR="$HOME/.nvm"
+export PNPM_HOME="$HOME/.local/share/pnpm"
 export PATH="$PATH:/opt:/usr/local/go/bin"
-export PATH="$HOME/.npm-global/bin:$(go env GOPATH)/bin"
+export PATH="$HOME/.config/emacs/bin:$PATH"
+export PATH="$HOME/.npm-global/bin:$HOME/.bun/bin:$HOME/.turso:$HOME/.local/bin:$(go env GOPATH)/bin:$PNPM_HOME:$PATH"
 
 # Go environment variables
 export GOPATH=$(go env GOPATH)
 export PATH=$PATH:$GOPATH/bin
+
+# NVM configuration
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+[ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"
+
+# Pulumi
+export PATH=$PATH:/home/vinicius/.pulumi/bin
 
 # Set up pyenv root directory
 export PYENV_ROOT="$HOME/.pyenv"
@@ -115,6 +125,8 @@ bindkey "^J" accept-line
 bindkey "^M" accept-line
 bindkey -r "^[^["
 
+zle_highlight+=(paste:none)
+
 # Aliases
 alias ls='ls --color=auto'
 alias la='ls -la'
@@ -127,3 +139,5 @@ alias rm='rm -rf'
 alias touch='retouch'
 
 eval "$(fzf --zsh)"
+
+source /home/vhespanha/.config/broot/launcher/bash/br

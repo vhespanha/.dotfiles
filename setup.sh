@@ -16,9 +16,6 @@ function link_files() {
   mkdir -p ~/.config
   rm -f ~/.gitconfig
   rm -rf ~/.zshrc ~/.prettierrc ~/.editorconfig ~/.config/nvim ~/.config/starship.toml
-  if [ -L "gitpod/.nix-profile" ]; then
-    rm gitpod/.nix-profile
-  fi
   stow --dotfiles --restow .
 }
 

@@ -8,7 +8,6 @@ function install_software() {
   sudo apt-get install -o DPkg::Lock::Timeout=600 -y build-essential jq software-properties-common
   sudo apt-get install -y ca-certificates curl gnupg stow neovim luajit fd-find ripgrep fzf
   sudo curl -sS https://starship.rs/install.sh | sh -s -- -y
-  curl https://pyenv.run | bash
   eval "$(starship init zsh)"
 }
 

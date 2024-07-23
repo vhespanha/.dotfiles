@@ -2,6 +2,12 @@
 
 set -e # Exit immediately if a command exits with a non-zero status
 
+LOG_FILE="/home/gitpod/.dotfiles.log"
+
+# Ensure the script has permission to write to the log file
+sudo touch "$LOG_FILE"
+chmod 644 "$LOG_FILE"
+
 function log() {
   echo "$1" | tee -a "$LOG_FILE"
 }

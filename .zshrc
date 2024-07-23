@@ -20,15 +20,40 @@ export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/gcr/ssh"
 
 source "${ZINIT_HOME}/zinit.zsh"
 
+# Global FZF options
+export FZF_DEFAULT_OPTS='
+  --height=25%
+  --layout=reverse
+  --color=fg:#6a737d,bg:#0f0f0f,hl:#bc8cff,fg+:#bc8cff,bg+:#0f0f0f,hl+:#bc8cff,border:#0f0f0f
+  --color=info:#6a737d,prompt:#bc8cff,spinner:#bc8cff,pointer:#0f0f0f,marker:#0f0f0f,header:#0f0f0f
+'
+
+# Use ~~ as the trigger sequence instead of the default **
+export FZF_COMPLETION_TRIGGER='^I'
+
+# Options to fzf command
+export FZF_COMPLETION_OPTS='--border --info=inline'
+
+# Use fd (https://github.com/sharkdp/fd) for listing path candidates.
+# - The first argument to the function ($1) is the base path to start traversal
+# - See the source code (completion.{bash,zsh}) for the details.
+_fzf_compgen_path() {
+  fd --hidden --follow --exclude ".git" . "$1"
+}
+
+# Use fd to generate the list for directory completion
+_fzf_compgen_dir() {
+  fd --type d --hidden --follow --exclude ".git" . "$1"
+}
+
+export FUNCNEST=1000
+
 # Plugins
 zinit light zsh-users/zsh-syntax-highlighting
 zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-autosuggestions
 zinit light zsh-users/zsh-history-substring-search
-zinit light agkozak/zsh-z
 zinit light Aloxaf/fzf-tab
-zinit ice lucid nocompile
-zinit load MenkeTechnologies/zsh-cargo-completion
 
 zinit snippet OMZP::git
 zinit snippet OMZP::sudo
@@ -40,15 +65,10 @@ zinit snippet OMZP::direnv
 # Completions
 autoload -Uz compinit && compinit
 
-zstyle ':completion:*' matcher-list '' \
-  'm:{a-z\-}={A-Z\_}' \
-  'r:[^[:alpha:]]||[[:alpha:]]=** r:|=* m:{a-z\-}={A-Z\_}' \
-  'r:|?=** m:{a-z\-}={A-Z\_}'
-
 zstyle ':completion:*' list-suffixes
 zstyle ':completion:*' squeeze-slashes
 zstyle ':completion:*' menu no
-zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza --color $realpath'
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls $realpath'
 zstyle ":fzf-tab:*" fzf-flags --height=25% --layout=reverse \
   --color "fg:#6a737d,bg:#0f0f0f,hl:#bc8cff,fg+:#bc8cff,bg+:#0f0f0f,hl+:#bc8cff,border:#0f0f0f" \
   --color "info:#6a737d,prompt:#bc8cff,spinner:#bc8cff,pointer:#0f0f0f,marker:#0f0f0f,header:#0f0f0f"
@@ -139,5 +159,3 @@ alias rm='rm -rf'
 alias touch='retouch'
 
 eval "$(fzf --zsh)"
-
-source /home/vhespanha/.config/broot/launcher/bash/br

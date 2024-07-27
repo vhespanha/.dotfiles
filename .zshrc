@@ -65,6 +65,8 @@ export PATH="$PATH:/opt:/usr/local/go/bin"
 export PATH="$HOME/.config/emacs/bin:$PATH"
 export PATH="$HOME/.npm-global/bin:$HOME/.bun/bin:$HOME/.turso:$HOME/.local/bin:$(go env GOPATH)/bin:$PNPM_HOME:$PATH"
 export GDK_BACKEND=wayland
+export PATH=$JAVA_HOME/bin:$PATH
+export OBSIDIAN_HOME="$HOME/Dropbox/notes"
 
 # Go environment variables
 export GOPATH=$(go env GOPATH)
@@ -133,7 +135,7 @@ bindkey -r "^[^["
 zle_highlight+=(paste:none)
 
 # Aliases
-alias ls='ls --color=auto'
+alias ls='eza --color'
 alias la='ls -la'
 alias ll='ls -lh'
 alias c='clear'
@@ -144,3 +146,6 @@ alias rm='rm -rf'
 alias touch='retouch'
 
 eval "$(fzf --zsh)"
+
+# sst
+export PATH=/home/vhespanha/.sst/bin:$PATH

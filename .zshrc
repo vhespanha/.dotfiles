@@ -143,7 +143,6 @@ alias md='mkdir -p'
 alias sudo='sudo -v; sudo'
 alias v='nvim'
 alias rm='rm -rf'
-alias touch='retouch'
 
 eval "$(fzf --zsh)"
 

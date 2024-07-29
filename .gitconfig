@@ -1,7 +1,7 @@
 [user]
     name = vhespanha
     email = vhespanha@tuta.io
-    signingkey = D2E5184CE2A03F26
+	signingkey = D2E5184CE2A03F26
 
 [core]
     editor = nvim
@@ -70,7 +70,7 @@
     insteadOf = https://github.com/
 
 [commit]
-    gpgSign = true
+	gpgSign = true
 
 [gpg]
     program = gpg
@@ -81,3 +81,11 @@
 [credential]
     helper = /usr/lib/git-core/git-credential-libsecret
 
+[page]
+	diff = delta
+	show = delta
+	log = delta
+	blame = delta
+	reflog = delta
+[interactive]
+	diffFilter = delta --color-only

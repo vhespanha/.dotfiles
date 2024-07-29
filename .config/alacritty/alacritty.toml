@@ -34,7 +34,7 @@ builtin_box_drawing = true
 size = 13
 
 [font.normal]
-family = "SFMono Nerd Font"
+family = "CommitMono Nerd Font"
 style = "Regular"
 
 [[keyboard.bindings]]

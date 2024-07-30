@@ -31,7 +31,7 @@ shape = "Beam"
 
 [font]
 builtin_box_drawing = true
-size = 13
+size = 16
 
 [font.normal]
 family = "CommitMono Nerd Font"

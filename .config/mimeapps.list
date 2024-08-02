@@ -14,6 +14,7 @@ application/xhtml+xml=firefox.desktop;userapp-Firefox-NBG9Q2.desktop;userapp-Fir
 application/x-extension-xhtml=firefox.desktop;userapp-Firefox-NBG9Q2.desktop;userapp-Firefox-WZNYQ2.desktop;
 application/x-extension-xht=firefox.desktop;userapp-Firefox-NBG9Q2.desktop;userapp-Firefox-WZNYQ2.desktop;
 application/x-zerosize=nvim.desktop;
+audio/x-mpegurl=io.github.celluloid_player.Celluloid.desktop;
 
 [Default Applications]
 application/vnd.oasis.opendocument.formula-template=org.gnome.font-viewer.desktop
@@ -30,3 +31,4 @@ application/x-extension-xhtml=userapp-Firefox-WZNYQ2.desktop
 application/x-extension-xht=userapp-Firefox-WZNYQ2.desktop
 application/x-zerosize=nvim.desktop
 text/plain=nvim.desktop
+audio/x-mpegurl=io.github.celluloid_player.Celluloid.desktop

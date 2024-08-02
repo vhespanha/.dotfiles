@@ -71,6 +71,7 @@ export OBSIDIAN_HOME="$HOME/Dropbox/notes"
 # Go environment variables
 export GOPATH=$(go env GOPATH)
 export PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:$(go env GOBIN)
 
 # NVM configuration
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"

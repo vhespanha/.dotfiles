@@ -1,0 +1,80 @@
+# UI elements
+"ui.background" = { bg = "#0f0f0f" }
+"ui.text" = "#e6edf3"
+"ui.text.focus" = { fg = "#e6edf3", bg = "#131313" }
+"ui.text.inactive" = "#7d8590"
+"ui.window" = "#0f0f0f"
+"ui.popup" = { bg = "#0f0f0f" }
+"ui.help" = { bg = "#0f0f0f" }
+"ui.menu" = { bg = "#0f0f0f" }
+"ui.menu.selected" = { bg = "#131313" }
+"ui.linenr" = "#7d8590"
+"ui.linenr.selected" = "#e6edf3"
+"ui.statusline" = { fg = "#7b8590", bg = "#0f0f0f" }
+"ui.statusline.inactive" = { fg = "#7b8590", bg = "#0f0f0f" }
+"ui.statusline.normal" = {fg = "#a371f7", bg = "#0f0f0f"}
+"ui.statusline.insert" = {fg = "#85e89d", bg = "0f0f0f"}
+"ui.statusline.select" = {fg = "#79b8ff", bg = "0f0f0f"}
+"ui.bufferline" = {fg = "#7b8590", bg = "#0f0f0f"}
+"ui.bufferline.active" = {fg = "#0f0f0f", bg = "#a371f7"}
+"ui.bufferline.background" = "#0f0f0f"
+"ui.cursor" = { fg = "#0f0f0f", bg = "#e6edf3" }
+"ui.cursor.primary" = { fg = "#0f0f0f", bg = "#e6edf3" }
+"ui.cursor.match" = { fg = "#a371f7" }
+"ui.selection" = { bg = "#a371f7" }
+"ui.selection.primary" = { bg = "#a371f7" }
+"ui.cursorline.primary" = { bg = "#131313" }
+"ui.highlight" = { bg = "#131313" }
+"ui.virtual.whitespace" = {fg = "#e6edf3"}
+"ui.virtual.ruler" = "#e6edf3"
+
+# Syntax highlighting
+"comment" = "#7d8590"
+"constant" = "#79b8ff"
+"constant.numeric" = "#79b8ff"
+"constant.character.escape" = "#85e89d"
+"string" = "#9ecbff"
+"string.regexp" = "#dbedff"
+"variable" = "#e6edf3"
+"variable.other" = "#e1e4e8"
+"variable.parameter" = "#e1e4e8"
+"variable.builtin" = "#79b8ff"
+"type" = "#b392f0"
+"type.builtin" = "#79b8ff"
+"attribute" = "#b392f0"
+"function" = "#b392f0"
+"function.builtin" = "#79b8ff"
+"function.macro" = "#b392f0"
+"keyword" = "#f97583"
+"keyword.control" = "#f97583"
+"keyword.control.import" = "#f97583"
+"keyword.operator" = "#f97583"
+"keyword.function" = "#f97583"
+"keyword.storage" = "#f97583"
+"keyword.storage.type" = "#f97583"
+"keyword.storage.modifier" = "#f97583"
+"operator" = "#e1e4e8"
+"punctuation" = "#e1e4e8"
+"punctuation.delimiter" = "#e1e4e8"
+"punctuation.bracket" = "#e1e4e8"
+"markup.heading" = { fg = "#79b8ff", modifiers = ["bold"] }
+"markup.list" = "#ffab70"
+"markup.bold" = { fg = "#e1e4e8", modifiers = ["bold"] }
+"markup.italic" = { fg = "#e1e4e8", modifiers = ["italic"] }
+"markup.link.url" = { fg = "#79b8ff", modifiers = ["underlined"] }
+"markup.link.text" = "#9ecbff"
+"markup.quote" = "#85e89d"
+"markup.raw" = "#79b8ff"
+
+# Diagnostics
+"warning" = "#d29922"
+"error" = "#f85149"
+"info" = "#b392f0"
+"hint" = "#b392f0"
+"diagnostic" = { underline = { style = "curl" } }
+"diagnostic.hint" = { underline = { style = "curl", color = "#b392f0" } }
+"diagnostic.info" = { underline = { style = "curl", color = "#b392f0" } }
+"diagnostic.warning" = { underline = { style = "curl", color = "#d29922" } }
+"diagnostic.error" = { underline = { style = "curl", color = "#f85149" } }
+"diagnostic.unnecessary" = { underline = { style = "curl", color = "#7b8590" } }
+"diagnostic.deprecated" = { underline = { style = "curl", color = "#ffab70" } }

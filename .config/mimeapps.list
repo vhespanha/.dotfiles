@@ -15,6 +15,11 @@ application/x-extension-xhtml=firefox.desktop;userapp-Firefox-NBG9Q2.desktop;use
 application/x-extension-xht=firefox.desktop;userapp-Firefox-NBG9Q2.desktop;userapp-Firefox-WZNYQ2.desktop;
 application/x-zerosize=nvim.desktop;
 audio/x-mpegurl=io.github.celluloid_player.Celluloid.desktop;
+application/zip=org.gnome.Nautilus.desktop;
+video/mp4=io.github.celluloid_player.Celluloid.desktop;
+video/quicktime=io.github.celluloid_player.Celluloid.desktop;
+video/vnd.avi=io.github.celluloid_player.Celluloid.desktop;
+image/jpeg=org.gnome.Loupe.desktop;
 
 [Default Applications]
 application/vnd.oasis.opendocument.formula-template=org.gnome.font-viewer.desktop
@@ -32,3 +37,14 @@ application/x-extension-xht=userapp-Firefox-WZNYQ2.desktop
 application/x-zerosize=nvim.desktop
 text/plain=nvim.desktop
 audio/x-mpegurl=io.github.celluloid_player.Celluloid.desktop
+application/zip=org.gnome.Nautilus.desktop
+video/mp4=io.github.celluloid_player.Celluloid.desktop
+video/quicktime=io.github.celluloid_player.Celluloid.desktop
+video/vnd.avi=io.github.celluloid_player.Celluloid.desktop
+image/jpeg=org.gnome.Loupe.desktop
+x-scheme-handler/roblox-studio=roblox-studio.desktop
+x-scheme-handler/roblox-player=roblox-player.desktop
+x-scheme-handler/roblox-studio-auth=roblox-studio-auth.desktop
+x-scheme-handler/roblox=roblox-player.desktop
+application/x-roblox-rbxl=roblox-studio.desktop
+application/x-roblox-rbxlx=roblox-studio.desktop

@@ -1,0 +1,43 @@
+theme = "lean"
+
+[editor]
+scrolloff = 5
+mouse = true
+middle-click-paste = false
+line-number = "relative"
+cursorline = true
+gutters = ["diagnostics", "line-numbers", "diff"]
+rulers = [120]
+bufferline = "multiple"
+color-modes = true
+text-width = 120
+popup-border = "all"
+
+[editor.statusline]
+left = ["mode", "file-absolute-path", "version-control", "file-modification-indicator"]
+right = ["diagnostics", "position-percentage", "spinner"]
+separator = ""
+mode.normal = ""
+mode.insert = ""
+mode.select = ""
+
+[editor.lsp]
+display-messages = true
+display-inlay-hints = true
+
+[editor.cursor-shape]
+normal = "block"
+insert = "bar"
+select = "block"
+
+[editor.whitespace]
+space = "all"
+tab = "all"
+nbsp = "none"
+nnbsp = "none"
+newline = "none"
+
+[editor.whitespace.characters]
+space = "·"
+tab = "·"
+tabpad = "·" 

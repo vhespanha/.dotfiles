@@ -98,6 +98,12 @@ eval "$(pyenv virtualenv-init -)"
 # Disable pyenv-virtualenv prompt modification
 export PYENV_VIRTUALENV_DISABLE_PROMPT=1
 
+export MANPAGER='nvim +Man!'
+
+export GTK_CSD=0 emacs
+
+export LD_PRELOAD=/usr/lib/libgtk3-nocsd.so.0
+
 # History settings
 HISTSIZE=2000
 HISTFILE=~/.zsh_history
@@ -144,6 +150,8 @@ alias md='mkdir -p'
 alias sudo='sudo -v; sudo'
 alias v='nvim'
 alias rm='rm -rf'
+alias tr='fd --type f --hidden --exclude .git | tree --fromfile'
+alias hx="helix"
 
 eval "$(fzf --zsh)"
 
